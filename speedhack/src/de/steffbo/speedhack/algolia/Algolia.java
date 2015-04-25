@@ -9,8 +9,10 @@ public class Algolia {
 
 	public static void main(String[] args) {
 		
-		APIClient client = new APIClient(Util.getProperty("algolia_id"), Util.getProperty("algolia_key"));		
-		Index index = client.initIndex("steffbo");
+//		APIClient client = new APIClient(Util.getProperty("algolia_id"), Util.getProperty("algolia_key"));		
+//		Index index = client.initIndex("steffbo");
+		
+		System.out.println(Util.getProperty("algolia_id"));
 	}
 
 }

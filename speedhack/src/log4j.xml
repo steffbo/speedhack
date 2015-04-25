@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd" >
+<log4j:configuration debug="false">
+
+	<appender name="default.console" class="org.apache.log4j.ConsoleAppender">
+		<param name="target" value="System.out" />
+		<param name="threshold" value="debug" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{ISO8601} %-5p [%c{1}] - %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="default.file" class="org.apache.log4j.FileAppender">
+		<param name="file" value="${catalina.home}/logs/log4j.log" />
+		<param name="append" value="false" />
+		<param name="threshold" value="debug" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{ISO8601} %-5p [%c{1}] - %m%n" />
+		</layout>
+	</appender>
+
+	<logger name="com.tsystems.sfph.elvis.util.server" additivity="true">
+		<level value="error" />
+		<appender-ref ref="default.file" />
+	</logger>
+
+	<logger name="com.transflow" additivity="false">
+		<level value="error" />
+		<appender-ref ref="default.file" />
+	</logger>
+
+	<root>
+		<priority value="info" />
+		<appender-ref ref="default.console" />
+	</root>
+</log4j:configuration>
