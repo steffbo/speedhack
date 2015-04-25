@@ -1,4 +1,4 @@
-package de.steffbo.api;
+package de.steffbo.speedhack;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -23,26 +23,14 @@ public class TestServlet extends HttpServlet {
 		super();
 	}
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
-	protected void doGet(HttpServletRequest request,
+	@Override
+	protected void service(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 
 		String foo = request.getParameter("foo");
 		PrintWriter writer = response.getWriter();
 		writer.write(foo);
 		writer.flush();
-		
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
-	protected void doPost(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
 
 	}
 
